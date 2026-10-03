@@ -19,7 +19,8 @@ def save(self, filename="default.maxpat", device_type=None, verbose=True, check=
 
     Usage:
     filename --> savefile name (.maxpat or .amxd)
-    device_type --> for Max for Live .amxd files: "instrument", "audio_effect", or "midi_effect"
+    device_type --> for Max for Live .amxd files: "instrument", "audio_effect", "midi_effect",
+                    "midi_generator", or "midi_transformation" (Live 12 MIDI Tools)
                     required when saving as .amxd; when set, forces .amxd extension
     verbose --> print log message to console
     check --> run check_patch before saving
@@ -29,19 +30,20 @@ def save(self, filename="default.maxpat", device_type=None, verbose=True, check=
 
     if ext == ".amxd" or device_type is not None:
         # Max for Live save path
-        from ...amxd import save_amxd
+        from ...amxd import save_amxd, DEVICE_TYPES
+        from ...m4l import device_json
 
         if device_type is None:
             raise ValueError(
                 "device_type is required for .amxd files. "
-                "Choose from: 'instrument', 'audio_effect', 'midi_effect'"
+                f"Choose from: {', '.join(DEVICE_TYPES)}"
             )
 
         if ".amxd" not in Path(filename).suffixes:
             # replace existing extension (e.g. .maxpat) with .amxd, or append .amxd if none
             filename = str(Path(filename).with_suffix(".amxd"))
 
-        json_dict = self.get_json()
+        json_dict = device_json(self.get_json(), device_type)
         save_amxd(json_dict, filename, device_type=device_type)
 
     else:

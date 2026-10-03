@@ -1,0 +1,29 @@
+{
+  "default": {
+    "box": {"id": "obj-1", "maxclass": "newobj", "numinlets": 2, "numoutlets": 2, "outlettype": ["", ""], "patching_rect": [100.0, 100.0, 101.0, 22.0], "text": "live.observer"}
+  },
+  "args": {
+    "required": [],
+    "optional": [
+      {"name": "property", "type": ["symbol"]}
+    ]
+  },
+  "attribs": [
+    {"name": "COMMON"}
+  ],
+  "in/out": {},
+  "doc": {
+    "digest": "Monitor changes in Live objects",
+    "description": "live.observer\n    is used to listen to changes in the values of properties of Live\n    objects. This object works in conjunction with the \n    live.path\n     object, which sends \n    \n       id \n      nn\n    \n     messages into the right inlet of \n    live.observer\n     . \n    \n    \n     After an object id and property is specified, its value is sent out the\n    left outlet. From this moment on, the value is sent on each change of the\n    property ('notification') as well as in response to bang messages. \n    \n    \n     The left outlet is reserved for value messages, all other output is sent to\n    the right outlet. \n    \n    \n     Not all properties can be observed, please consult the \n     Live Object Model\n     to see which can. Also, it is not possible to modify the live set from a\n    notification, i.e. while you are receiving a value message spontaneously\n    sent by a \n    live.observer\n     's outlet. \n    \n    \n     Besides properties, it is also possible to observer children of Live\n    objects. Their values are object ids or lists of them.\n    \n    \n\tNote: The Live API runs in the main thread in Live, and all messages to and from the API are automatically deferred.",
+    "methods": [
+      {"name": "property", "digest": "Arguments: \n        \n        \n          property\n        \n         the name of a property of the current object \n        \n        \n         Operation: \n        \n         Selects the property to be observed.", "args": [{"name": "property", "optional": "0", "type": "symbol"}]},
+      {"name": "property", "digest": "Arguments: \n        \n        \n          child\n        \n         the name of a child of the current object \n        \n        \n         Operation: \n        \n         Selects the child id to be observed. Outputs the id (or \"id 0\")", "args": [{"name": "child", "optional": "0", "type": "symbol"}]},
+      {"name": "property", "digest": "Arguments: \n        \n        \n          child\n        \n         the name of a child list of the current object \n        \n        \n         Operation: \n        \n         Selects the child list to be observed. Outputs the id list (or nothing)", "args": [{"name": "list-child", "optional": "0", "type": "symbol"}]},
+      {"name": "getproperty", "digest": "Operation: \n        \n         Sends the name of the selected property (or child resp. list-child)"},
+      {"name": "gettype", "digest": "Operation: \n        \n         Sends the type of currently observed property or child to the right\n        outlet."},
+      {"name": "getid", "digest": "Operation: \n        \n         Sends the id of the currently observed Live object to the right outlet."},
+      {"name": "bang", "digest": "Operation: \n        \n         Sends current value of selected property of current object to the left\n        outlet."},
+      {"name": "id nn", "digest": "Operation: \n        \n         Sets the current object."}
+    ]
+  }
+}

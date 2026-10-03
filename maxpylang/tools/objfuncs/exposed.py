@@ -3,6 +3,8 @@ tools.obj.exposed
 
 Functions of the MaxObject class that are exposed to the user. 
 
+    move() --> move an object in the patching view
+    present() --> show an object in presentation mode (e.g. a Max for Live device view)
     edit() --> edit an object
     link() --> link a file for a js object or abstraction
     inspect() --> inspect an object
@@ -19,6 +21,22 @@ def move(self, x, y):
     self._dict['box']['patching_rect'][0] = x
     self._dict['box']['patching_rect'][1] = y
     
+    return
+
+def present(self, x, y, width=None, height=None):
+    """
+    Add an object to presentation mode at the specified location.
+
+    width/height default to the object's patching size.
+    """
+
+    rect = self._dict['box']['patching_rect']
+    width = rect[2] if width is None else width
+    height = rect[3] if height is None else height
+
+    self._dict['box']['presentation'] = 1
+    self._dict['box']['presentation_rect'] = [float(x), float(y), float(width), float(height)]
+
     return
 
 def edit(self, text_add = "append", text = None, **extra_attribs):

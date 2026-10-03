@@ -258,6 +258,7 @@ patch.save("my_arp.amxd", device_type="midi_effect")          # → .amxd
 ```
 
 When `device_type` is set, the extension is forced to `.amxd`. When saving `.amxd` without `device_type`, a `ValueError` is raised.
+Live 12 MIDI Tools use `device_type="midi_generator"` or `"midi_transformation"`.
 
 ### Device Types and I/O Objects
 
@@ -301,6 +302,50 @@ midiin → midiparse → [processing] → midiformat → midiout
 - **No volume knob needed** — Ableton's mixer handles track volume
 - **`plugout~` has 2 inlets** (L/R stereo) — connect both for stereo output
 - **`plugin~` has 2 outlets** (L/R stereo) — process both channels
+- **Use `live.*` controls** (not `dial`/`slider`) so Live can automate and save them
+- **Give every parameter a unique `parameter_longname`**
+
+### Live Objects and Parameters
+
+All `live.*` objects are known (stubs: `from maxpylang.objects import live_dial`).
+UI objects (`live.dial`, `live.numbox`, `live.slider`, `live.toggle`, `live.button`, `live.text`,
+`live.menu`, `live.tab`, `live.gain~`, `live.meter~`, `live.comment`, ...) keep their own maxclass;
+API objects (`live.object`, `live.path`, `live.observer`, `live.thisdevice`, `live.remote~`,
+`live.param~ <name>`, ...) are normal text boxes.
+
+Set Live parameter properties as keyword attributes — they are stored in
+`saved_attribute_attributes.valueof`, `parameter_enable` is turned on, and `varname`/`parameter_shortname`
+default to `parameter_longname`:
+
+```python
+cutoff = patch.place(mp.MaxObject(
+    "live.dial",
+    parameter_longname="Cutoff",       # unique per device; the automation name in Live
+    parameter_mmin=20., parameter_mmax=20000.,
+    parameter_initial=1000.,           # scalar or list; enables parameter_initial_enable
+    parameter_unitstyle="hertz",       # or int: see mp.m4l.UNITSTYLES
+    parameter_exponent=3.))[0]
+
+mode = mp.MaxObject("live.menu", parameter_longname="Mode",
+                    parameter_enum=["LP", "HP", "BP"], parameter_mmax=2)
+freq = mp.MaxObject("live.dial", prototype="freq", parameter_longname="Freq")  # Live's preset
+```
+
+- `live.dial` outlets: `outs[0]` value, `outs[1]` normalized 0-1.
+- Unit styles: int, float, time, hertz, decibel, percent, pan, semitones, midi, custom, native.
+- Parameter types (`parameter_type`): float, int, enum, blob.
+- `live.comment Some text` → comment text; `live.text @text Off @texton On` → button labels.
+
+### Device View (Presentation)
+
+```python
+cutoff.present(8, 8)                  # presentation=1, presentation_rect=[8, 8, w, h]
+patch.set_device(openinpresentation=1, devicewidth=120.)
+```
+
+- Live's device view is 169 px tall; place controls within it.
+- `devicewidth=0.` lets Live fit the width to the presentation contents.
+- `set_device()` keys: see `mp.m4l.DEVICE_KEYS`. `project.amxdtype` is filled in on save.
 
 ### Loading Existing .amxd Files
 

@@ -18,7 +18,10 @@ from .. import typechecks as tc
 def add_extra_attribs(self, extra_attribs):
     """
     Add extra attributes to self dict.
+
+    Live parameter attributes go into saved_attribute_attributes.valueof (see add_live_params).
     """
+    extra_attribs = self.add_live_params(extra_attribs)
     for key, val in extra_attribs.items():
         self._dict['box'][key] = val
 
@@ -61,7 +64,7 @@ def remove_bad_attribs(self, attribs, attrib_speclist):
     for attrib, vals in attribs.items():
 
         #make it a list...
-        if isinstance(vals, int or float):
+        if isinstance(vals, (int, float, str)):
             vals = [vals]
 
         #check for no value specified

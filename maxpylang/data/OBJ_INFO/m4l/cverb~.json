@@ -1,0 +1,31 @@
+{
+  "default": {
+    "box": {"id": "obj-1", "maxclass": "newobj", "numinlets": 2, "numoutlets": 1, "outlettype": ["signal"], "patching_rect": [100.0, 100.0, 52.0, 22.0], "text": "cverb~"}
+  },
+  "args": {
+    "required": [
+      {"name": "reverb-time", "units": "ms", "type": ["int"]}
+    ],
+    "optional": []
+  },
+  "attribs": [
+    {"name": "COMMON"}
+  ],
+  "in/out": {},
+  "doc": {
+    "digest": "A simple monaural reverberator",
+    "description": "cverb~ provides monaural reverberation for an input signal.",
+    "inlets": [
+      {"id": "0", "type": "signal", "digest": "(signal) Input", "description": "Audio input signal"},
+      {"id": "1", "type": "signal/float", "digest": "(signal/float) Reverberation Time (in ms)", "description": "Reverberation time, in milliseconds (set by a float/signal)"}
+    ],
+    "outlets": [
+      {"id": "0", "type": "signal", "digest": "(signal) Output", "description": "The reverberated output signal"}
+    ],
+    "methods": [
+      {"name": "float", "digest": "Set the reverberation time", "args": [{"name": "reverb-time", "optional": "0", "type": "float"}]},
+      {"name": "clear", "digest": "Clear reverb memory"},
+      {"name": "signal", "digest": "Function depends on inlet"}
+    ]
+  }
+}

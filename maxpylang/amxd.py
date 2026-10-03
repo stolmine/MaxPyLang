@@ -3,15 +3,19 @@ amxd.py — Save and load Max for Live .amxd files.
 
 The .amxd format is a binary wrapper around the same JSON that .maxpat uses.
 Three chunks: ampf (device type), meta (reserved), ptch (patcher JSON + null).
+Matches the layout of the Live 12 template devices (Misc/Max Devices/*.amxd):
+meta holds 4 null bytes, and the ptch payload ends with a newline + null byte.
 """
 
 import struct
 import json
 
 DEVICE_TYPES = {
-    "audio_effect": b"aaaa",
-    "midi_effect":  b"mmmm",
-    "instrument":   b"iiii",
+    "audio_effect":        b"aaaa",
+    "midi_effect":         b"mmmm",
+    "instrument":          b"iiii",
+    "midi_generator":      b"nagg",
+    "midi_transformation": b"natt",
 }
 
 
@@ -23,7 +27,7 @@ def save_amxd(patcher_json, filename, device_type="instrument"):
         raise ValueError(f"Unknown device_type {device_type!r}. "
                          f"Choose from: {', '.join(DEVICE_TYPES)}")
 
-    json_bytes = json.dumps(patcher_json, indent=2).encode("utf-8") + b"\x00"
+    json_bytes = json.dumps(patcher_json, indent=2).encode("utf-8") + b"\n\x00"
 
     with open(filename, "wb") as f:
         # ampf chunk — device type identifier

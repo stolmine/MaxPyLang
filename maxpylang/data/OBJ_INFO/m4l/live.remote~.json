@@ -1,0 +1,24 @@
+{
+  "default": {
+    "box": {"id": "obj-1", "maxclass": "newobj", "numinlets": 2, "numoutlets": 1, "outlettype": [""], "patching_rect": [100.0, 100.0, 94.0, 22.0], "text": "live.remote~"}
+  },
+  "args": {"required": [], "optional": []},
+  "attribs": [
+    {"name": "COMMON"},
+    {"name": "smoothing", "type": "float", "size": "1"},
+    {"name": "normalized", "type": "int", "size": "1"}
+  ],
+  "in/out": {},
+  "doc": {
+    "digest": "Realtime control of parameters in Ableton Live and Max for Live.",
+    "description": "The\n\tlive.remote~\n\t object allows you to remotely control parameters in Ableton Live and Max for Live in realtime. \n\t To understand more about Live's parameters, look up the DeviceParameter Object Class in the\n\t Live Object Model\n\t .",
+    "methods": [
+      {"name": "float", "digest": "Send a decimal value to the selected Live Parameter", "args": [{"name": "value", "optional": "0", "type": "float"}]},
+      {"name": "int", "digest": "Send a value to the selected Live Parameter", "args": [{"name": "value", "optional": "0", "type": "int"}]},
+      {"name": "list", "digest": "Start a ramp", "args": [{"name": "target-value", "optional": "0", "type": "float"}, {"name": "delta-time", "optional": "0", "units": "ms", "type": "number"}]},
+      {"name": "signal", "digest": "Send signal values to the selected Live Parameter"},
+      {"name": "id", "digest": "Set the Live object using it's id nn", "args": [{"name": "parameter id", "type": "int", "optional": "0"}]},
+      {"name": "getid", "digest": "Report the mapped object's id"}
+    ]
+  }
+}

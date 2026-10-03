@@ -62,6 +62,10 @@ def update_text(self):
     """
     Update text in MaxObject dict with name/args/attributes. 
     """
+    if self.is_live_ui():
+        self.update_live_text()
+        return
+
     self._dict['box']['text'] = self.get_text()
 
     return

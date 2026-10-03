@@ -1,0 +1,31 @@
+{
+  "default": {
+    "box": {"id": "obj-1", "maxclass": "newobj", "numinlets": 2, "numoutlets": 1, "outlettype": [""], "patching_rect": [100.0, 100.0, 87.0, 22.0], "text": "live.object"}
+  },
+  "args": {"required": [], "optional": []},
+  "attribs": [
+    {"name": "COMMON"}
+  ],
+  "in/out": {},
+  "doc": {
+    "digest": "Perform operations on Live objects",
+    "description": "live.object is used to perform operations on Live objects that have been selected using the live.path object. These operations include retrieving information on the current state of the Live API and setting values to control Live.\n\t\t\n\t\t\n\t\tNote: The Live API runs in the main thread in Live, and all messages to and from the API are automatically deferred.",
+    "methods": [
+      {"name": "getid", "digest": "Report the current object's id"},
+      {"name": "id nn", "digest": "Set the current object"},
+      {"name": "getpath", "digest": "Send the canonical path of current object"},
+      {"name": "gettype", "digest": "Send the type (class)"},
+      {"name": "getinfo", "digest": "Send a description of the current object"},
+      {"name": "bang, getid", "digest": "Sends the id of the current Live object to the outlet"},
+      {"name": "call", "digest": "Call the given function of the current object (optional parameter list)", "args": [{"name": "function", "optional": "0", "type": "symbol"}, {"name": "parameter-list", "optional": "1", "type": "list of different types"}]},
+      {"name": "set", "digest": "Set the list child to contain the given ids", "args": [{"name": "list-child", "optional": "0", "type": "symbol"}, {"name": "id nn ... id mm", "optional": "0", "type": "id-list"}]},
+      {"name": "set", "digest": "Set the child name to point to the given child", "args": [{"name": "child", "optional": "0", "type": "symbol"}, {"name": "id nn", "optional": "0", "type": "id"}]},
+      {"name": "set", "digest": "Set the given list property to the value list", "args": [{"name": "list-property", "optional": "0", "type": "symbol"}, {"name": "value-list", "optional": "0", "type": "various types"}]},
+      {"name": "set", "digest": "Set the value of given property of the current object", "args": [{"name": "property", "optional": "0", "type": "symbol"}, {"name": "value", "optional": "0", "type": "various types"}]},
+      {"name": "get", "digest": "Send the ids of the elements of the list-child of the current object", "args": [{"name": "list-child", "optional": "0", "type": "symbol"}]},
+      {"name": "get", "digest": "Send the id of the child of the current object", "args": [{"name": "child", "optional": "0", "type": "symbol"}]},
+      {"name": "get", "digest": "Send the list of values of given property of the current object", "args": [{"name": "list-property", "optional": "0", "type": "symbol"}]},
+      {"name": "get", "digest": "Output the value of a property of the current object", "args": [{"name": "property", "optional": "0", "type": "symbol"}]}
+    ]
+  }
+}

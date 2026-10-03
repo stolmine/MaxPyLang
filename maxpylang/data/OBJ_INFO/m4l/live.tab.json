@@ -1,0 +1,119 @@
+{
+  "default": {
+    "box": {
+      "id": "obj-1",
+      "maxclass": "live.tab",
+      "numinlets": 1,
+      "numoutlets": 3,
+      "outlettype": ["", "", "float"],
+      "patching_rect": [100.0, 100.0, 56.0, 56.0],
+      "parameter_enable": 1,
+      "saved_attribute_attributes": {"valueof": {"parameter_enum": ["one", "two", "three"], "parameter_longname": "live.tab", "parameter_mmax": 2, "parameter_modmode": 0, "parameter_shortname": "live.tab", "parameter_type": 2, "parameter_unitstyle": 9}},
+      "varname": "live.tab"
+    }
+  },
+  "args": {"required": [], "optional": []},
+  "attribs": [
+    {"name": "COMMON"},
+    {"name": "active", "type": "int", "size": "1"},
+    {"name": "activebgcolor", "type": "float", "size": "4"},
+    {"name": "activebgoncolor", "type": "float", "size": "4"},
+    {"name": "annotation_name", "type": "symbol", "size": "1"},
+    {"name": "appearance", "type": "int", "size": "1"},
+    {"name": "bgcolor", "type": "float", "size": "4"},
+    {"name": "bgoncolor", "type": "float", "size": "4"},
+    {"name": "blinktime", "type": "int", "size": "1"},
+    {"name": "bordercolor", "type": "float", "size": "4"},
+    {"name": "button", "type": "int", "size": "1"},
+    {"name": "focusbordercolor", "type": "float", "size": "4"},
+    {"name": "inactivelcdcolor", "type": "float", "size": "4"},
+    {"name": "inactivetextoffcolor", "type": "float", "size": "4"},
+    {"name": "inactivetextoncolor", "type": "float", "size": "4"},
+    {"name": "lcdbgcolor", "type": "float", "size": "4"},
+    {"name": "lcdcolor", "type": "float", "size": "4"},
+    {"name": "livemode", "type": "int", "size": "1"},
+    {"name": "mode", "type": "int", "size": "1"},
+    {"name": "multiline", "type": "int", "size": "1"},
+    {"name": "param_connect", "type": "symbol", "size": "1"},
+    {"name": "parameter_mappable", "type": "int", "size": "1"},
+    {"name": "pictures", "type": "symbol", "size": "64"},
+    {"name": "remapsvgcolors", "type": "int", "size": "1"},
+    {"name": "rounded", "type": "float", "size": "1"},
+    {"name": "spacing_x", "type": "float", "size": "1"},
+    {"name": "spacing_y", "type": "float", "size": "1"},
+    {"name": "textcolor", "type": "float", "size": "4"},
+    {"name": "textoncolor", "type": "float", "size": "4"},
+    {"name": "usepicture", "type": "int", "size": "1"},
+    {"name": "usesvgviewbox", "type": "int", "size": "1"},
+    {"name": "parameter_enable", "type": "int", "size": "1"},
+    {"name": "parameter_longname", "type": "symbol", "size": "1"},
+    {"name": "parameter_shortname", "type": "symbol", "size": "1"},
+    {"name": "parameter_type", "type": "atom", "size": "1"},
+    {"name": "parameter_mmin", "type": "float", "size": "1"},
+    {"name": "parameter_mmax", "type": "float", "size": "1"},
+    {"name": "parameter_initial", "type": "atom", "size": "1"},
+    {"name": "parameter_initial_enable", "type": "int", "size": "1"},
+    {"name": "parameter_unitstyle", "type": "atom", "size": "1"},
+    {"name": "parameter_units", "type": "symbol", "size": "1"},
+    {"name": "parameter_exponent", "type": "float", "size": "1"},
+    {"name": "parameter_steps", "type": "int", "size": "1"},
+    {"name": "parameter_enum", "type": "atom", "size": "1"},
+    {"name": "parameter_enum_icons", "type": "atom", "size": "1"},
+    {"name": "parameter_modmode", "type": "int", "size": "1"},
+    {"name": "parameter_modmin", "type": "float", "size": "1"},
+    {"name": "parameter_modmax", "type": "float", "size": "1"},
+    {"name": "parameter_invisible", "type": "int", "size": "1"},
+    {"name": "parameter_info", "type": "symbol", "size": "1"},
+    {"name": "parameter_annotation_name", "type": "symbol", "size": "1"},
+    {"name": "parameter_linknames", "type": "int", "size": "1"},
+    {"name": "parameter_order", "type": "int", "size": "1"},
+    {"name": "parameter_speedlim", "type": "float", "size": "1"},
+    {"name": "parameter_defer", "type": "int", "size": "1"},
+    {"name": "parameter_button_mode", "type": "symbol", "size": "1"},
+    {"name": "prototype", "type": "symbol", "size": "1"}
+  ],
+  "in/out": {},
+  "prototypes": {
+    "filters": {
+      "box": {"pictures": ["lowcut.svg", "lowshelf.svg", "bandpass.svg", "notch.svg", "highshelf.svg", "highcut.svg"], "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["lowpass", "lowshelf", "bandpass", "notch", "highshelf", "highpass"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.tab", "parameter_mmax": 127.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.tab", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 0}
+    },
+    "notevalues": {
+      "box": {"pictures": ["1n.svg", "2n.svg", "4n.svg", "8n.svg", "16n.svg"], "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["1n", "2n", "4n", "8n", "16n"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.tab", "parameter_mmax": 127.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.tab", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 0}
+    },
+    "trigger": {
+      "box": {"button": 1, "pictures": []},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["1", "2", "3", "4"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.tab", "parameter_mmax": 127.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.tab", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 0}
+    },
+    "waveforms": {
+      "box": {"pictures": ["sine.svg", "up.svg", "down.svg", "updown.svg", "square.svg", "random.svg"], "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["sine", "sawup", "sawdown", "triangle", "square", "random"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.tab", "parameter_mmax": 127.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.tab", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 0}
+    }
+  },
+  "doc": {
+    "digest": "A user interface tab/multiple button object in the style of Ableton Live.",
+    "description": "live.tab is used to create multiple-button and multi-column displays and interfaces.",
+    "inlets": [
+      {"id": "0", "type": "INLET_TYPE", "digest": "Messages in"}
+    ],
+    "outlets": [
+      {"id": "0", "type": "OUTLET_TYPE", "digest": "Item Index"},
+      {"id": "1", "type": "OUTLET_TYPE", "digest": "Item Symbol"},
+      {"id": "2", "type": "OUTLET_TYPE", "digest": "Parameter Raw Value (0.-1.)"}
+    ],
+    "methods": [
+      {"name": "bang", "digest": "Output the current item"},
+      {"name": "int", "digest": "Display a tab item and send the current item", "args": [{"name": "input", "optional": "0", "type": "int"}]},
+      {"name": "float", "digest": "Display a tab item and send the current item", "args": [{"name": "input", "optional": "0", "type": "float"}]},
+      {"name": "assign", "digest": "Display and output a value", "args": [{"name": "assign-input", "optional": "0", "type": "float"}]},
+      {"name": "init", "digest": "Restore and output the initial value"},
+      {"name": "(mouse)", "digest": "Click to set a tab selection"},
+      {"name": "outputvalue", "digest": "Output the current value"},
+      {"name": "rawfloat", "digest": "Store a raw normalized value, convert to real, display, and output", "args": [{"name": "input", "optional": "0", "type": "float"}]},
+      {"name": "set", "digest": "Display a menu item without triggering output", "args": [{"name": "tab index", "optional": "0", "type": "float"}]},
+      {"name": "setsymbol", "digest": "Display a tab item without triggering output", "args": [{"name": "tab item", "optional": "0", "type": "list"}]},
+      {"name": "symbol", "digest": "Display a tab item and report output", "args": [{"name": "tab item", "optional": "0", "type": "list"}]}
+    ]
+  }
+}

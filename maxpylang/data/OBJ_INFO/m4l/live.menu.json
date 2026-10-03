@@ -1,0 +1,112 @@
+{
+  "default": {
+    "box": {
+      "id": "obj-1",
+      "maxclass": "live.menu",
+      "numinlets": 1,
+      "numoutlets": 3,
+      "outlettype": ["", "", "float"],
+      "patching_rect": [100.0, 100.0, 48.0, 15.0],
+      "parameter_enable": 1,
+      "saved_attribute_attributes": {"valueof": {"parameter_enum": ["one", "two", "three"], "parameter_longname": "live.menu", "parameter_mmax": 2, "parameter_modmode": 0, "parameter_shortname": "live.menu", "parameter_type": 2}},
+      "varname": "live.menu"
+    }
+  },
+  "args": {"required": [], "optional": []},
+  "attribs": [
+    {"name": "COMMON"},
+    {"name": "active", "type": "int", "size": "1"},
+    {"name": "activebgcolor", "type": "float", "size": "4"},
+    {"name": "annotation_name", "type": "symbol", "size": "1"},
+    {"name": "appearance", "type": "int", "size": "1"},
+    {"name": "bordercolor", "type": "float", "size": "4"},
+    {"name": "focusbordercolor", "type": "float", "size": "4"},
+    {"name": "hltcolor", "type": "float", "size": "4"},
+    {"name": "hlttextcolor", "type": "float", "size": "4"},
+    {"name": "inactivelcdcolor", "type": "float", "size": "4"},
+    {"name": "lcdbgcolor", "type": "float", "size": "4"},
+    {"name": "lcdcolor", "type": "float", "size": "4"},
+    {"name": "param_connect", "type": "symbol", "size": "1"},
+    {"name": "parameter_mappable", "type": "int", "size": "1"},
+    {"name": "pictures", "type": "symbol", "size": "256"},
+    {"name": "remapsvgcolors", "type": "int", "size": "1"},
+    {"name": "textcolor", "type": "float", "size": "4"},
+    {"name": "tricolor", "type": "float", "size": "4"},
+    {"name": "usepicture", "type": "int", "size": "1"},
+    {"name": "usesvgviewbox", "type": "int", "size": "1"},
+    {"name": "parameter_enable", "type": "int", "size": "1"},
+    {"name": "parameter_longname", "type": "symbol", "size": "1"},
+    {"name": "parameter_shortname", "type": "symbol", "size": "1"},
+    {"name": "parameter_type", "type": "atom", "size": "1"},
+    {"name": "parameter_mmin", "type": "float", "size": "1"},
+    {"name": "parameter_mmax", "type": "float", "size": "1"},
+    {"name": "parameter_initial", "type": "atom", "size": "1"},
+    {"name": "parameter_initial_enable", "type": "int", "size": "1"},
+    {"name": "parameter_unitstyle", "type": "atom", "size": "1"},
+    {"name": "parameter_units", "type": "symbol", "size": "1"},
+    {"name": "parameter_exponent", "type": "float", "size": "1"},
+    {"name": "parameter_steps", "type": "int", "size": "1"},
+    {"name": "parameter_enum", "type": "atom", "size": "1"},
+    {"name": "parameter_enum_icons", "type": "atom", "size": "1"},
+    {"name": "parameter_modmode", "type": "int", "size": "1"},
+    {"name": "parameter_modmin", "type": "float", "size": "1"},
+    {"name": "parameter_modmax", "type": "float", "size": "1"},
+    {"name": "parameter_invisible", "type": "int", "size": "1"},
+    {"name": "parameter_info", "type": "symbol", "size": "1"},
+    {"name": "parameter_annotation_name", "type": "symbol", "size": "1"},
+    {"name": "parameter_linknames", "type": "int", "size": "1"},
+    {"name": "parameter_order", "type": "int", "size": "1"},
+    {"name": "parameter_speedlim", "type": "float", "size": "1"},
+    {"name": "parameter_defer", "type": "int", "size": "1"},
+    {"name": "parameter_button_mode", "type": "symbol", "size": "1"},
+    {"name": "prototype", "type": "symbol", "size": "1"}
+  ],
+  "in/out": {},
+  "prototypes": {
+    "filters": {
+      "box": {"pictures": ["lowcut.svg", "lowshelf.svg", "bandpass.svg", "notch.svg", "highshelf.svg", "highcut.svg"], "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["1/128", "1/64", "1/32T", "1/64D", "1/32", "1/16T", "1/32D", "1/16", "1/8T", "1/16D", "1/8", "1/4T", "1/8D", "1/4", "1/2T", "1/4D", "1/2", "1/1T", "1/2D", "1/1", "1/1D"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial": [0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "live.menu[2]", "parameter_mmax": 127.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.menu", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "noteratios": {
+      "box": {"pictures": []},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["1/128", "1/64", "1/32T", "1/64D", "1/32", "1/16T", "1/32D", "1/16", "1/8T", "1/16D", "1/8", "1/4T", "1/8D", "1/4", "1/2T", "1/4D", "1/2", "1/1T", "1/2D", "1/1", "1/1D"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial": [13.0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "live.menu[1]", "parameter_mmax": 127.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.menu", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "notes": {
+      "box": {"pictures": ["1n.svg", "2n.svg", "4n.svg", "8n.svg", "16n.svg"], "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["1/128", "1/64", "1/32T", "1/64D", "1/32", "1/16T", "1/32D", "1/16", "1/8T", "1/16D", "1/8", "1/4T", "1/8D", "1/4", "1/2T", "1/4D", "1/2", "1/1T", "1/2D", "1/1", "1/1D"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial": [0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "live.menu[3]", "parameter_mmax": 127.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.menu", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "notevalues": {
+      "box": {"pictures": []},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["128n", "64n", "32nt", "64nd", "32n", "16nt", "32nd", "16n", "8nt", "16nd", "8n", "4nt", "8nd", "4n", "2nt", "4nd", "2n", "1nt", "2nd", "1n", "1nd"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial": [13.0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "live.menu", "parameter_mmax": 127.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.menu", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "osc": {
+      "box": {"pictures": ["sine.svg", "up.svg", "down.svg", "updown.svg", "square.svg", "random.svg"], "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["1/128", "1/64", "1/32T", "1/64D", "1/32", "1/16T", "1/32D", "1/16", "1/8T", "1/16D", "1/8", "1/4T", "1/8D", "1/4", "1/2T", "1/4D", "1/2", "1/1T", "1/2D", "1/1", "1/1D"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial": [0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "live.menu[4]", "parameter_mmax": 127.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.menu", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    }
+  },
+  "doc": {
+    "digest": "Dropdown menu",
+    "description": "The live.menu object can be used to display text associated with incoming numbers and provide a general user interface. Item numbering starts from zero (0).",
+    "inlets": [
+      {"id": "0", "type": "INLET_TYPE", "digest": "Messages in"}
+    ],
+    "outlets": [
+      {"id": "0", "type": "OUTLET_TYPE", "digest": "Item Index"},
+      {"id": "1", "type": "OUTLET_TYPE", "digest": "Item Symbol"},
+      {"id": "2", "type": "OUTLET_TYPE", "digest": "Parameter Raw Value (0.-1.)"}
+    ],
+    "methods": [
+      {"name": "bang", "digest": "Send the current item out the outlets"},
+      {"name": "int", "digest": "Display a menu item and output its index and symbol", "args": [{"name": "item-index", "optional": "0", "type": "int"}]},
+      {"name": "float", "digest": "Display a menu item and output its index and symbol", "args": [{"name": "item-index", "optional": "0", "type": "float"}]},
+      {"name": "assign", "digest": "Display and output a value", "args": [{"name": "assign-input", "optional": "0", "type": "float"}]},
+      {"name": "init", "digest": "Restore and output the initial value"},
+      {"name": "(mouse)", "digest": "Click to select a menu itam"},
+      {"name": "outputvalue", "digest": "Send the current value out the outlet"},
+      {"name": "rawfloat", "digest": "Store a raw normalized value, convert to real, display, and output", "args": [{"name": "input-value", "optional": "0", "type": "float"}]},
+      {"name": "set", "digest": "Display a menu item without triggering output", "args": [{"name": "item index", "optional": "0", "type": "float"}]},
+      {"name": "setsymbol", "digest": "Select a menu item for display without triggering output", "args": [{"name": "menu item", "optional": "0", "type": "list"}]},
+      {"name": "symbol", "digest": "Select a menu item for display by name", "args": [{"name": "menu item", "optional": "0", "type": "list"}]}
+    ]
+  }
+}

@@ -89,7 +89,7 @@ class MaxObject():
         """
         return self._outs
 
-    from .tools.objfuncs.exposed import move, edit, link, inspect #exposed functions for user use
+    from .tools.objfuncs.exposed import move, present, edit, link, inspect #exposed functions for user use
 
 
 
@@ -138,6 +138,11 @@ class MaxObject():
                                             update_abstraction_from_file, link_abstraction,  \
                                             create_declared_abstraction, \
                                             get_trigger_out_types, get_unpack_out_types, update_vst
+
+
+
+    #FOR MAX FOR LIVE OBJS
+    from .tools.objfuncs.live import is_live_obj, is_live_ui, add_live_params, update_live_text
 
 
 

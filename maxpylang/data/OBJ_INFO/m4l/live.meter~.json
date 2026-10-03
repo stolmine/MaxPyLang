@@ -1,0 +1,43 @@
+{
+  "default": {
+    "box": {"id": "obj-1", "maxclass": "live.meter~", "numinlets": 1, "numoutlets": 2, "outlettype": ["float", "int"], "patching_rect": [100.0, 100.0, 25.0, 130.0]}
+  },
+  "args": {"required": [], "optional": []},
+  "attribs": [
+    {"name": "COMMON"},
+    {"name": "active", "type": "int", "size": "1"},
+    {"name": "bgcolor", "type": "float", "size": "4"},
+    {"name": "clip_size", "type": "int", "size": "1"},
+    {"name": "coldcolor", "type": "float", "size": "4"},
+    {"name": "display_range", "type": "float", "size": "2"},
+    {"name": "drawpeakhold", "type": "int", "size": "1"},
+    {"name": "hotcolor", "type": "float", "size": "4"},
+    {"name": "inactivecoldcolor", "type": "float", "size": "4"},
+    {"name": "inactivewarmcolor", "type": "float", "size": "4"},
+    {"name": "interval", "type": "int", "size": "1"},
+    {"name": "mode", "type": "int", "size": "1"},
+    {"name": "orientation", "type": "int", "size": "1"},
+    {"name": "overloadcolor", "type": "float", "size": "4"},
+    {"name": "threshold_db", "type": "float", "size": "1"},
+    {"name": "threshold_linear", "type": "float", "size": "1"},
+    {"name": "warmcolor", "type": "float", "size": "4"}
+  ],
+  "in/out": {},
+  "doc": {
+    "digest": "Live-style visual peak level indicator",
+    "description": "live.meter~ is a simple mono Live-style signal level meter that can be attached to any signal whose level is between -1 and 1 (other signals should be scaled first).",
+    "inlets": [
+      {"id": "0", "type": "float/signal", "digest": "Input to Meter", "description": "(signal) Input Between 0-1 to Meter"}
+    ],
+    "outlets": [
+      {"id": "0", "type": "float", "digest": "Amplitude (in dB)", "description": "Peak Value For Each Metering Interval"},
+      {"id": "1", "type": "int", "digest": "Channel for Amplitude Output"}
+    ],
+    "methods": [
+      {"name": "int", "digest": "Display an input value", "args": [{"name": "signal-value", "optional": "0", "type": "int"}]},
+      {"name": "float", "digest": "Display an input value", "args": [{"name": "signal-value", "optional": "0", "type": "float"}]},
+      {"name": "db", "digest": "Display a deciBel input value", "args": [{"name": "db-value", "optional": "0", "type": "float"}]},
+      {"name": "signal", "digest": "Display peak amplitude of the signal"}
+    ]
+  }
+}

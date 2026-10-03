@@ -1,0 +1,31 @@
+{
+  "default": {
+    "box": {"id": "obj-1", "maxclass": "newobj", "numinlets": 2, "numoutlets": 1, "outlettype": [""], "patching_rect": [100.0, 100.0, 108.0, 22.0], "text": "live.modulate~"}
+  },
+  "args": {"required": [], "optional": []},
+  "attribs": [
+    {"name": "COMMON"},
+    {"name": "depth", "type": "float", "size": "1"},
+    {"name": "smoothing", "type": "float", "size": "1"}
+  ],
+  "in/out": {},
+  "doc": {
+    "digest": "Modulate Ableton Live and Max for Live Parameters",
+    "description": "The live.modulate~ object enables you to modulate the value of Live parameters in realtime using signal objects. To understand more about Live's parameters, look up the DeviceParameter Object Class in the Live Object Model.",
+    "inlets": [
+      {"id": "0", "type": "INLET_TYPE", "digest": "value (signal/float) clipped to [-1, 1]"},
+      {"id": "1", "type": "INLET_TYPE", "digest": "id in"}
+    ],
+    "outlets": [
+      {"id": "0", "type": "OUTLET_TYPE", "digest": "status"}
+    ],
+    "methods": [
+      {"name": "int", "digest": "Send a value to the selected Live Parameter", "args": [{"name": "value", "optional": "0", "type": "int"}]},
+      {"name": "float", "digest": "Send a decimal value to the selected Live Parameter", "args": [{"name": "value", "optional": "0", "type": "float"}]},
+      {"name": "list", "digest": "Start a ramp", "args": [{"name": "target-value", "optional": "0", "type": "float"}, {"name": "delta-time", "optional": "0", "units": "ms", "type": "number"}]},
+      {"name": "getid", "digest": "Report the mapped object's id"},
+      {"name": "id", "digest": "Set the Live object using it's id nn", "args": [{"name": "parameter id", "type": "int", "optional": "0"}]},
+      {"name": "signal", "digest": "Send signal values to the selected Live Parameter"}
+    ]
+  }
+}

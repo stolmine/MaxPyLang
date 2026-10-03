@@ -28,6 +28,8 @@ Core API
 - Each connection is ``[outlet, inlet]``: ``patch.connect([obj1.outs[0], obj2.ins[0]])``.
 - ``save()`` auto-appends ``.maxpat`` if missing.
 - For Max for Live devices: ``patch.save("device.amxd", device_type="instrument")``.
+- Live parameters: ``mp.MaxObject("live.dial", parameter_longname="Cutoff", parameter_mmax=100.)``;
+  device view: ``obj.present(x, y)`` and ``patch.set_device(openinpresentation=1)``.
 
 Properties: ``patch.objs`` (dict), ``patch.num_objs`` (int), ``patch.curr_position`` (list).
 
@@ -187,6 +189,7 @@ from .maxpatch import MaxPatch
 from .importobjs import import_objs
 from .xlet import Inlet, Outlet
 from .amxd import save_amxd, load_amxd, DEVICE_TYPES
+from . import m4l
 
 try:
     from . import objects

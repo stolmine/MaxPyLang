@@ -12,6 +12,7 @@ Functions of MaxPatch that are exposed to the user.
    
     reorder() --> re-number objects in the patch
     set_position() --> set cursor position
+    set_device() --> set Max for Live device settings (presentation, width, ...)
     replace() --> replace objects
     inspect() --> inspect the patch or patch objects
     
@@ -22,6 +23,7 @@ from .placing import place
 from .patchcords import connect
 from .deleting import delete
 from .checking import check
+from maxpylang.m4l import DEVICE_KEYS
 
 #reorder objects
 def reorder(self, verbose=False):
@@ -81,6 +83,29 @@ def set_position(self, new_x, new_y, from_place=False, verbose=False):
 
     return
 
+
+
+
+def set_device(self, **settings):
+    """
+    Set Max for Live device settings on the patcher.
+
+    settings --> patcher keys, e.g. openinpresentation=1, devicewidth=240.0, latency=0
+                 (see maxpylang.m4l.DEVICE_KEYS for accepted keys)
+
+    openinpresentation=1 makes Live show the presentation view as the device UI;
+    devicewidth=0.0 lets Live fit the width to the presentation contents.
+    """
+
+    unknown = [key for key in settings if key not in DEVICE_KEYS]
+    if unknown:
+        raise ValueError(f"Unknown device setting(s) {', '.join(unknown)}. "
+                         f"Choose from: {', '.join(DEVICE_KEYS)}")
+
+    for key, val in settings.items():
+        self._patcher_dict['patcher'][key] = val
+
+    return
 
 
 

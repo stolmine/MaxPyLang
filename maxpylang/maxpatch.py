@@ -104,6 +104,7 @@ class MaxPatch:
     from .tools.patchfuncs.exposed import (
         reorder,
         set_position,
+        set_device,
         inspect,
         save,
         place,

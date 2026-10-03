@@ -17,3 +17,9 @@ with warnings.catch_warnings():
         from .msp import *
     except ImportError:
         pass
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore", UnknownObjectWarning)
+    try:
+        from .m4l import *
+    except ImportError:
+        pass

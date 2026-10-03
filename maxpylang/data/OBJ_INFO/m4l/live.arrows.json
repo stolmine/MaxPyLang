@@ -1,0 +1,40 @@
+{
+  "default": {
+    "box": {"id": "obj-1", "maxclass": "live.arrows", "numinlets": 1, "numoutlets": 1, "outlettype": [""], "patching_rect": [100.0, 100.0, 102.0, 44.0], "parameter_enable": 0}
+  },
+  "args": {"required": [], "optional": []},
+  "attribs": [
+    {"name": "COMMON"},
+    {"name": "annotation_name", "type": "symbol", "size": "1"},
+    {"name": "arrowcolor", "type": "float", "size": "4"},
+    {"name": "blinkcolor", "type": "float", "size": "4"},
+    {"name": "blinktime", "type": "int", "size": "1"},
+    {"name": "bordercolor", "type": "float", "size": "4"},
+    {"name": "downarrow", "type": "int", "size": "1"},
+    {"name": "leftarrow", "type": "int", "size": "1"},
+    {"name": "param_connect", "type": "symbol", "size": "1"},
+    {"name": "parameter_enable", "type": "int", "size": "1"},
+    {"name": "parameter_mappable", "type": "int", "size": "1"},
+    {"name": "rightarrow", "type": "int", "size": "1"},
+    {"name": "uparrow", "type": "int", "size": "1"}
+  ],
+  "in/out": {},
+  "doc": {
+    "digest": "Vectorized arrow(s) user interface object",
+    "description": "live.arrows displays a variable number of directional arrow buttons.",
+    "inlets": [
+      {"id": "0", "type": "INLET_TYPE", "digest": "Message In (colors...)"}
+    ],
+    "outlets": [
+      {"id": "0", "type": "OUTLET_TYPE", "digest": "Selected Arrow Symbol"}
+    ],
+    "methods": [
+      {"name": "int", "digest": "Select an arrow and send a message", "args": [{"name": "input", "optional": "0", "type": "int"}]},
+      {"name": "down", "digest": "Flash the down arrow and send a message"},
+      {"name": "left", "digest": "Flash the left arrow and send a message"},
+      {"name": "(mouse)", "digest": "Click to output the corresponding arrow symbol"},
+      {"name": "right", "digest": "Flash the right arrow and send a message"},
+      {"name": "up", "digest": "Flash the up arrow and send a message"}
+    ]
+  }
+}

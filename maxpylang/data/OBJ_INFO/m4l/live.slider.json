@@ -1,0 +1,121 @@
+{
+  "default": {
+    "box": {
+      "id": "obj-1",
+      "maxclass": "live.slider",
+      "numinlets": 1,
+      "numoutlets": 2,
+      "outlettype": ["", "float"],
+      "patching_rect": [100.0, 100.0, 40.0, 96.0],
+      "parameter_enable": 1,
+      "saved_attribute_attributes": {"valueof": {"parameter_longname": "live.slider", "parameter_modmode": 0, "parameter_shortname": "live.slider", "parameter_type": 0, "parameter_unitstyle": 0}},
+      "varname": "live.slider"
+    }
+  },
+  "args": {"required": [], "optional": []},
+  "attribs": [
+    {"name": "COMMON"},
+    {"name": "active", "type": "int", "size": "1"},
+    {"name": "annotation_name", "type": "symbol", "size": "1"},
+    {"name": "focusbordercolor", "type": "float", "size": "4"},
+    {"name": "modulationcolor", "type": "float", "size": "4"},
+    {"name": "orientation", "type": "int", "size": "1"},
+    {"name": "param_connect", "type": "symbol", "size": "1"},
+    {"name": "parameter_mappable", "type": "int", "size": "1"},
+    {"name": "relative", "type": "int", "size": "1"},
+    {"name": "showname", "type": "int", "size": "1"},
+    {"name": "shownumber", "type": "int", "size": "1"},
+    {"name": "slidercolor", "type": "float", "size": "4"},
+    {"name": "textcolor", "type": "float", "size": "4"},
+    {"name": "tribordercolor", "type": "float", "size": "4"},
+    {"name": "tricolor", "type": "float", "size": "4"},
+    {"name": "trioncolor", "type": "float", "size": "4"},
+    {"name": "parameter_enable", "type": "int", "size": "1"},
+    {"name": "parameter_longname", "type": "symbol", "size": "1"},
+    {"name": "parameter_shortname", "type": "symbol", "size": "1"},
+    {"name": "parameter_type", "type": "atom", "size": "1"},
+    {"name": "parameter_mmin", "type": "float", "size": "1"},
+    {"name": "parameter_mmax", "type": "float", "size": "1"},
+    {"name": "parameter_initial", "type": "atom", "size": "1"},
+    {"name": "parameter_initial_enable", "type": "int", "size": "1"},
+    {"name": "parameter_unitstyle", "type": "atom", "size": "1"},
+    {"name": "parameter_units", "type": "symbol", "size": "1"},
+    {"name": "parameter_exponent", "type": "float", "size": "1"},
+    {"name": "parameter_steps", "type": "int", "size": "1"},
+    {"name": "parameter_enum", "type": "atom", "size": "1"},
+    {"name": "parameter_enum_icons", "type": "atom", "size": "1"},
+    {"name": "parameter_modmode", "type": "int", "size": "1"},
+    {"name": "parameter_modmin", "type": "float", "size": "1"},
+    {"name": "parameter_modmax", "type": "float", "size": "1"},
+    {"name": "parameter_invisible", "type": "int", "size": "1"},
+    {"name": "parameter_info", "type": "symbol", "size": "1"},
+    {"name": "parameter_annotation_name", "type": "symbol", "size": "1"},
+    {"name": "parameter_linknames", "type": "int", "size": "1"},
+    {"name": "parameter_order", "type": "int", "size": "1"},
+    {"name": "parameter_speedlim", "type": "float", "size": "1"},
+    {"name": "parameter_defer", "type": "int", "size": "1"},
+    {"name": "parameter_button_mode", "type": "symbol", "size": "1"},
+    {"name": "prototype", "type": "symbol", "size": "1"}
+  ],
+  "in/out": {},
+  "prototypes": {
+    "Q": {
+      "box": {},
+      "valueof": {"parameter_annotation_name": "", "parameter_exponent": 3.5, "parameter_info": "", "parameter_initial": [1.0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "Q", "parameter_mmax": 10.0, "parameter_mmin": 0.1, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "Q", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 0, "parameter_units": "", "parameter_unitstyle": 1}
+    },
+    "amount": {
+      "box": {},
+      "valueof": {"parameter_annotation_name": "", "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial": [0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "Amount", "parameter_mmax": 100.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "Amount", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 0, "parameter_units": "", "parameter_unitstyle": 5}
+    },
+    "freq": {
+      "box": {},
+      "valueof": {"parameter_annotation_name": "", "parameter_exponent": 3.333333, "parameter_info": "", "parameter_initial": [0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "Freq", "parameter_mmax": 10000.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "Freq", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 0, "parameter_units": "", "parameter_unitstyle": 3}
+    },
+    "gain": {
+      "box": {},
+      "valueof": {"parameter_annotation_name": "", "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial": [0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "Gain", "parameter_mmax": 30.0, "parameter_mmin": -70.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "Gain", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 0, "parameter_units": "", "parameter_unitstyle": 4}
+    },
+    "horiz": {
+      "box": {"orientation": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.slider", "parameter_mmax": 127.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.slider", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 0, "parameter_units": "", "parameter_unitstyle": 0}
+    },
+    "pan": {
+      "box": {"orientation": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial": [0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "Pan", "parameter_mmax": 50.0, "parameter_mmin": -50.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "Pan", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 0, "parameter_units": "", "parameter_unitstyle": 6}
+    },
+    "pitch": {
+      "box": {},
+      "valueof": {"parameter_annotation_name": "", "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial": [60], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "Pitch", "parameter_mmax": 120.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "Pitch", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 0, "parameter_units": "", "parameter_unitstyle": 8}
+    },
+    "time": {
+      "box": {"orientation": 1, "textcolor": [0.101961, 0.121569, 0.172549, 1.0]},
+      "valueof": {"parameter_annotation_name": "", "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial": [0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "Time", "parameter_mmax": 1000.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "Time", "parameter_speedlim": 0, "parameter_steps": 41, "parameter_type": 0, "parameter_units": "", "parameter_unitstyle": 2}
+    },
+    "transp": {
+      "box": {},
+      "valueof": {"parameter_annotation_name": "", "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial": [0], "parameter_initial_enable": 1, "parameter_invisible": 0, "parameter_linknames": 1, "parameter_longname": "Transp", "parameter_mmax": 12.0, "parameter_mmin": -12.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "Transp", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 0, "parameter_units": "", "parameter_unitstyle": 7}
+    }
+  },
+  "doc": {
+    "digest": "Output numbers by moving a slider onscreen",
+    "description": "live.slider is a user interface object that resembles a sliding potentiometer.",
+    "inlets": [
+      {"id": "0", "type": "int/float", "digest": "Parameter Value (0.00-127.00)"}
+    ],
+    "outlets": [
+      {"id": "0", "type": "int/float", "digest": "Parameter Value (0.00-127.00)"},
+      {"id": "1", "type": "int/float", "digest": "Parameter Raw Value (0.-1.)"}
+    ],
+    "methods": [
+      {"name": "bang", "digest": "Send the current value out the outlet"},
+      {"name": "int", "digest": "Store, display, and output a number", "args": [{"name": "input", "optional": "0", "type": "int"}]},
+      {"name": "float", "digest": "Store, display, and output a number", "args": [{"name": "input", "optional": "0", "type": "float"}]},
+      {"name": "assign", "digest": "Display and output a value", "args": [{"name": "assign-input", "optional": "0", "type": "float"}]},
+      {"name": "init", "digest": "Restore and output the initial value"},
+      {"name": "(mouse)", "digest": "Click and drag in the slider to change the value."},
+      {"name": "outputvalue", "digest": "Send the current value out the outlet"},
+      {"name": "rawfloat", "digest": "Store a raw normalized value, convert to real, display, and output", "args": [{"name": "input", "optional": "0", "type": "float"}]},
+      {"name": "set", "digest": "Set and display the current value without triggering output", "args": [{"name": "set-input", "optional": "0", "type": "float"}]}
+    ]
+  }
+}

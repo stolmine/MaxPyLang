@@ -1,0 +1,29 @@
+{
+  "default": {
+    "box": {"id": "obj-1", "maxclass": "newobj", "numinlets": 1, "numoutlets": 1, "outlettype": [""], "patching_rect": [100.0, 100.0, 80.0, 22.0], "text": "live.banks"}
+  },
+  "args": {"required": [], "optional": []},
+  "attribs": [
+    {"name": "COMMON"}
+  ],
+  "in/out": {},
+  "doc": {
+    "digest": "Manage Max for Live Device banks for Push controllers.",
+    "description": "Create, edit and delete Max for Live Device parameter banks, as displayed on Ableton's Push controllers. Banks are saved with the device, but can be modified in real-time to cause updates on the Push display. For instance, you might want to reveal or hide particular parameters within a bank depending on device state.",
+    "inlets": [
+      {"id": "0", "type": "INLET_TYPE", "digest": "Message in"}
+    ],
+    "outlets": [
+      {"id": "0", "type": "OUTLET_TYPE", "digest": "Color in RGBA Format"}
+    ],
+    "methods": [
+      {"name": "(mouse)", "digest": "Double-click to open the Parameter Banks window."},
+      {"name": "delete", "digest": "Delete an existing bank.", "args": [{"name": "bank_id", "type": "int", "optional": "0"}]},
+      {"name": "edit", "digest": "Edit an existing bank.", "args": [{"name": "bank_id", "type": "int", "optional": "0"}, {"name": "bank_name", "type": "symbol", "optional": "0"}, {"name": "bank_parameters", "type": "list", "optional": "1"}]},
+      {"name": "getcount", "digest": "Report the current number of banks."},
+      {"name": "getname", "digest": "Report the name of a bank.", "args": [{"name": "bank_id", "type": "int", "optional": "0"}]},
+      {"name": "getparameters", "digest": "Report the parameters in a bank.", "args": [{"name": "bank_id", "type": "int", "optional": "0"}]},
+      {"name": "new", "digest": "Create a parameter bank.", "args": [{"name": "bank_id", "type": "int", "optional": "0"}, {"name": "bank_name", "type": "symbol", "optional": "0"}, {"name": "bank_parameters", "type": "list", "optional": "1"}]}
+    ]
+  }
+}

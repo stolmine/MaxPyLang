@@ -1,0 +1,144 @@
+{
+  "default": {
+    "box": {
+      "id": "obj-1",
+      "maxclass": "live.text",
+      "numinlets": 1,
+      "numoutlets": 2,
+      "outlettype": ["", ""],
+      "patching_rect": [100.0, 100.0, 25.0, 25.0],
+      "parameter_enable": 1,
+      "saved_attribute_attributes": {"valueof": {"parameter_enum": ["val1", "val2"], "parameter_longname": "live.text", "parameter_mmax": 1.0, "parameter_shortname": "live.text", "parameter_type": 2}},
+      "varname": "live.text"
+    }
+  },
+  "args": {"required": [], "optional": []},
+  "attribs": [
+    {"name": "COMMON"},
+    {"name": "active", "type": "int", "size": "1"},
+    {"name": "activebgcolor", "type": "float", "size": "4"},
+    {"name": "activebgoncolor", "type": "float", "size": "4"},
+    {"name": "activetextcolor", "type": "float", "size": "4"},
+    {"name": "activetextoncolor", "type": "float", "size": "4"},
+    {"name": "annotation_name", "type": "symbol", "size": "1"},
+    {"name": "appearance", "type": "int", "size": "1"},
+    {"name": "automation", "type": "symbol", "size": "1"},
+    {"name": "automationon", "type": "symbol", "size": "1"},
+    {"name": "bgcolor", "type": "float", "size": "4"},
+    {"name": "bgoncolor", "type": "float", "size": "4"},
+    {"name": "blinktime", "type": "int", "size": "1"},
+    {"name": "bordercolor", "type": "float", "size": "4"},
+    {"name": "focusbordercolor", "type": "float", "size": "4"},
+    {"name": "inactivelcdcolor", "type": "float", "size": "4"},
+    {"name": "labeltextcolor", "type": "float", "size": "4"},
+    {"name": "lcdbgcolor", "type": "float", "size": "4"},
+    {"name": "lcdcolor", "type": "float", "size": "4"},
+    {"name": "mode", "type": "int", "size": "1"},
+    {"name": "outputmode", "type": "int", "size": "1"},
+    {"name": "param_connect", "type": "symbol", "size": "1"},
+    {"name": "parameter_mappable", "type": "int", "size": "1"},
+    {"name": "pictures", "type": "symbol", "size": "2"},
+    {"name": "remapsvgcolors", "type": "int", "size": "1"},
+    {"name": "rounded", "type": "float", "size": "1"},
+    {"name": "text", "type": "symbol", "size": "1"},
+    {"name": "textcolor", "type": "float", "size": "4"},
+    {"name": "textoffcolor", "type": "float", "size": "4"},
+    {"name": "texton", "type": "symbol", "size": "1"},
+    {"name": "transition", "type": "int", "size": "1"},
+    {"name": "usepicture", "type": "int", "size": "1"},
+    {"name": "usesvgviewbox", "type": "int", "size": "1"},
+    {"name": "parameter_enable", "type": "int", "size": "1"},
+    {"name": "parameter_longname", "type": "symbol", "size": "1"},
+    {"name": "parameter_shortname", "type": "symbol", "size": "1"},
+    {"name": "parameter_type", "type": "atom", "size": "1"},
+    {"name": "parameter_mmin", "type": "float", "size": "1"},
+    {"name": "parameter_mmax", "type": "float", "size": "1"},
+    {"name": "parameter_initial", "type": "atom", "size": "1"},
+    {"name": "parameter_initial_enable", "type": "int", "size": "1"},
+    {"name": "parameter_unitstyle", "type": "atom", "size": "1"},
+    {"name": "parameter_units", "type": "symbol", "size": "1"},
+    {"name": "parameter_exponent", "type": "float", "size": "1"},
+    {"name": "parameter_steps", "type": "int", "size": "1"},
+    {"name": "parameter_enum", "type": "atom", "size": "1"},
+    {"name": "parameter_enum_icons", "type": "atom", "size": "1"},
+    {"name": "parameter_modmode", "type": "int", "size": "1"},
+    {"name": "parameter_modmin", "type": "float", "size": "1"},
+    {"name": "parameter_modmax", "type": "float", "size": "1"},
+    {"name": "parameter_invisible", "type": "int", "size": "1"},
+    {"name": "parameter_info", "type": "symbol", "size": "1"},
+    {"name": "parameter_annotation_name", "type": "symbol", "size": "1"},
+    {"name": "parameter_linknames", "type": "int", "size": "1"},
+    {"name": "parameter_order", "type": "int", "size": "1"},
+    {"name": "parameter_speedlim", "type": "float", "size": "1"},
+    {"name": "parameter_defer", "type": "int", "size": "1"},
+    {"name": "parameter_button_mode", "type": "symbol", "size": "1"},
+    {"name": "prototype", "type": "symbol", "size": "1"}
+  ],
+  "in/out": {},
+  "prototypes": {
+    "filter.default": {
+      "box": {"activebgcolor": [0.917647, 0.94902, 0.054902, 1.0], "activebgoncolor": [1.0, 0.603922, 0.0, 1.0], "automation": "Lowsheslf", "automationon": "Highshelf", "pictures": ["lowshelf.svg", "highshelf.svg"], "texton": "Highshelf", "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["Lowsheslf", "Highshelf"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.text", "parameter_mmax": 1.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.text", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "filter.label": {
+      "box": {"activebgcolor": [0.917647, 0.94902, 0.054902, 1.0], "activebgoncolor": [1.0, 0.603922, 0.0, 1.0], "appearance": 1, "automation": "Lowshelf", "automationon": "Highshelf", "pictures": ["lowshelf.svg", "highshelf.svg"], "texton": "Highshelf", "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["Lowshelf", "Highshelf"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.text", "parameter_mmax": 1.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.text", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "pitch.default": {
+      "box": {"activebgcolor": [0.917647, 0.94902, 0.054902, 1.0], "activebgoncolor": [1.0, 0.603922, 0.0, 1.0], "automation": "Freq", "automationon": "Note", "pictures": ["hz.svg", "4n.svg"], "texton": "Note", "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["Freq", "Note"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.text", "parameter_mmax": 1.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.text", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "pitch.label": {
+      "box": {"activebgcolor": [0.917647, 0.94902, 0.054902, 1.0], "activebgoncolor": [1.0, 0.603922, 0.0, 1.0], "appearance": 1, "automation": "Freq", "automationon": "Note", "pictures": ["hz.svg", "4n.svg"], "texton": "Note", "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["Freq", "Note"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.text", "parameter_mmax": 1.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.text", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "text.default": {
+      "box": {"automation": "Off", "automationon": "On", "texton": "On"},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["Off", "On"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.text", "parameter_mmax": 1.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.text", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "text.label": {
+      "box": {"appearance": 1, "automation": "Off", "automationon": "On", "texton": "On"},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["Off", "On"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.text", "parameter_mmax": 1.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.text", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "trigger.default": {
+      "box": {"automation": "Arm", "automationon": "Trigger", "mode": 0, "texton": "Trig"},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["Arm", "Trigger"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.text", "parameter_mmax": 1.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.text", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "trigger.label": {
+      "box": {"appearance": 1, "automation": "Arm", "automationon": "Trigger", "mode": 0, "texton": "Trig"},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["Arm", "Trigger"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.text", "parameter_mmax": 1.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.text", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "waveform.default": {
+      "box": {"automation": "Off", "automationon": "On", "pictures": ["sine.svg", "sine.svg"], "texton": "On", "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["Off", "On"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.text", "parameter_mmax": 1.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.text", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    },
+    "waveform.label": {
+      "box": {"appearance": 1, "automation": "Off", "automationon": "On", "pictures": ["sine.svg", "sine.svg"], "texton": "On", "usepicture": 1},
+      "valueof": {"parameter_annotation_name": "", "parameter_enum": ["Off", "On"], "parameter_exponent": 1.0, "parameter_info": "", "parameter_initial_enable": 0, "parameter_invisible": 0, "parameter_linknames": 0, "parameter_longname": "live.text", "parameter_mmax": 1.0, "parameter_mmin": 0.0, "parameter_modmax": 127.0, "parameter_modmin": 0.0, "parameter_modmode": 0, "parameter_order": 0, "parameter_shortname": "live.text", "parameter_speedlim": 0, "parameter_steps": 0, "parameter_type": 2, "parameter_units": "", "parameter_unitstyle": 10}
+    }
+  },
+  "doc": {
+    "digest": "A user interface button/toggle",
+    "description": "live.text object is a user interface object used to create buttons and toggles.",
+    "inlets": [
+      {"id": "0", "type": "INLET_TYPE", "digest": "Messages in"}
+    ],
+    "outlets": [
+      {"id": "0", "type": "OUTLET_TYPE", "digest": "Item Index"},
+      {"id": "1", "type": "OUTLET_TYPE", "digest": "Item Symbol"}
+    ],
+    "methods": [
+      {"name": "bang", "digest": "A bang message will toggle the state of the object."},
+      {"name": "int", "digest": "Toggle the button, send its text and a 0/1 message", "args": [{"name": "input", "optional": "0", "type": "int"}]},
+      {"name": "float", "digest": "Toggle the button, send its text and a 0/1 message", "args": [{"name": "input", "optional": "0", "type": "float"}]},
+      {"name": "assign", "digest": "Display and output a value", "args": [{"name": "assign-input", "optional": "0", "type": "float"}]},
+      {"name": "init", "digest": "Restore and output the initial value"},
+      {"name": "(mouse)", "digest": "Highlight the text, send the text and a bang"},
+      {"name": "outputvalue", "digest": "Send the current value out the outlet"},
+      {"name": "rawfloat", "digest": "A raw normalized value (between 0. and 1.)", "args": [{"name": "input-value", "optional": "0", "type": "float"}]},
+      {"name": "set", "digest": "Toggle the state without sending output", "args": [{"name": "set-input", "optional": "0", "type": "float"}]},
+      {"name": "setsymbol", "digest": "Choose a button by name and toggle it without causing output", "args": [{"name": "button-text-item", "optional": "0", "type": "list"}]},
+      {"name": "symbol", "digest": "Choose a button by name and toggle it", "args": [{"name": "button-text-item", "optional": "0", "type": "list"}]}
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "default": {
+    "box": {"id": "obj-1", "maxclass": "newobj", "numinlets": 3, "numoutlets": 3, "outlettype": ["signal", "signal", "signal"], "patching_rect": [100.0, 100.0, 66.0, 22.0], "text": "chucker~"}
+  },
+  "args": {
+    "required": [
+      {"name": "buffer-size-in-ms", "type": ["int"]}
+    ],
+    "optional": []
+  },
+  "attribs": [
+    {"name": "COMMON"}
+  ],
+  "in/out": {},
+  "doc": {
+    "digest": "Segment audio and reorder it on looped playback",
+    "description": "chucker~ takes a specified amount of audio data, stores the data in an internal buffer, divides the buffered data into equal sections, and allows the sections to be reordered on playback.",
+    "inlets": [
+      {"id": "0", "type": "INLET_TYPE", "digest": "Left Audio Input"},
+      {"id": "1", "type": "INLET_TYPE", "digest": "Right Audio Input"},
+      {"id": "2", "type": "INLET_TYPE", "digest": "Audio Sync Input", "description": "The right inlet of the object accepts a signal input in the range 0. - 1.0 (typically from the right outlet of a groove~ object) to control the playback of the object's buffered contents."}
+    ],
+    "outlets": [
+      {"id": "0", "type": "OUTLET_TYPE", "digest": "signal: Out left outlet: The segmented and reordered playback of the left channel of the chucker~ object's buffered contents."},
+      {"id": "1", "type": "OUTLET_TYPE", "digest": "Right Audio Output", "description": "signal: Out middle outlet: The segmented and reordered playback of the right channel of the chucker~ object's buffered contents."},
+      {"id": "2", "type": "OUTLET_TYPE", "digest": "Current Step Number", "description": "signal: Out right outlet: The current step number in the playback cycle is sent out the right outlet as a signal value.\n\t\t\t\t\n\t\t\t\tNote: This is the step number, not the index of the segment being played back."}
+    ],
+    "methods": [
+      {"name": "directions", "digest": "Set playback direction for steps", "args": [{"name": "direction-specifier", "optional": "0", "type": "list"}]},
+      {"name": "fademode", "digest": "Set the fade method", "args": [{"name": "mode", "optional": "0", "type": "int"}]},
+      {"name": "freeze", "digest": "Loop the current buffer segment on playback", "args": [{"name": "buffer-segment", "optional": "0", "type": "int"}]},
+      {"name": "nstep", "digest": "Set the number of buffer segments", "args": [{"name": "number-of-steps", "optional": "0", "type": "int"}]},
+      {"name": "signal", "digest": "Function depends on inlet"},
+      {"name": "smooth", "digest": "Set a crossfade amount between segments", "args": [{"name": "smooth-amount", "optional": "0", "type": "float"}]},
+      {"name": "steps", "digest": "Set the playback order for the sections", "args": [{"name": "channel and range", "optional": "0", "type": "list"}]}
+    ]
+  }
+}

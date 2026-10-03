@@ -1,0 +1,80 @@
+{
+  "default": {
+    "box": {
+      "id": "obj-1",
+      "maxclass": "live.toggle",
+      "numinlets": 1,
+      "numoutlets": 1,
+      "outlettype": [""],
+      "patching_rect": [100.0, 100.0, 32.0, 29.0],
+      "parameter_enable": 1,
+      "saved_attribute_attributes": {"valueof": {"parameter_enum": ["off", "on"], "parameter_longname": "live.toggle", "parameter_mmax": 1, "parameter_modmode": 0, "parameter_shortname": "live.toggle", "parameter_type": 2}},
+      "varname": "live.toggle"
+    }
+  },
+  "args": {"required": [], "optional": []},
+  "attribs": [
+    {"name": "COMMON"},
+    {"name": "active", "type": "int", "size": "1"},
+    {"name": "activebgcolor", "type": "float", "size": "4"},
+    {"name": "activebgoncolor", "type": "float", "size": "4"},
+    {"name": "annotation_name", "type": "symbol", "size": "1"},
+    {"name": "appearance", "type": "int", "size": "1"},
+    {"name": "bgcolor", "type": "float", "size": "4"},
+    {"name": "bgoncolor", "type": "float", "size": "4"},
+    {"name": "bordercolor", "type": "float", "size": "4"},
+    {"name": "focusbordercolor", "type": "float", "size": "4"},
+    {"name": "inactivelcdcolor", "type": "float", "size": "4"},
+    {"name": "lcdcolor", "type": "float", "size": "4"},
+    {"name": "outputmode", "type": "int", "size": "1"},
+    {"name": "param_connect", "type": "symbol", "size": "1"},
+    {"name": "parameter_mappable", "type": "int", "size": "1"},
+    {"name": "rounded", "type": "float", "size": "1"},
+    {"name": "parameter_enable", "type": "int", "size": "1"},
+    {"name": "parameter_longname", "type": "symbol", "size": "1"},
+    {"name": "parameter_shortname", "type": "symbol", "size": "1"},
+    {"name": "parameter_type", "type": "atom", "size": "1"},
+    {"name": "parameter_mmin", "type": "float", "size": "1"},
+    {"name": "parameter_mmax", "type": "float", "size": "1"},
+    {"name": "parameter_initial", "type": "atom", "size": "1"},
+    {"name": "parameter_initial_enable", "type": "int", "size": "1"},
+    {"name": "parameter_unitstyle", "type": "atom", "size": "1"},
+    {"name": "parameter_units", "type": "symbol", "size": "1"},
+    {"name": "parameter_exponent", "type": "float", "size": "1"},
+    {"name": "parameter_steps", "type": "int", "size": "1"},
+    {"name": "parameter_enum", "type": "atom", "size": "1"},
+    {"name": "parameter_enum_icons", "type": "atom", "size": "1"},
+    {"name": "parameter_modmode", "type": "int", "size": "1"},
+    {"name": "parameter_modmin", "type": "float", "size": "1"},
+    {"name": "parameter_modmax", "type": "float", "size": "1"},
+    {"name": "parameter_invisible", "type": "int", "size": "1"},
+    {"name": "parameter_info", "type": "symbol", "size": "1"},
+    {"name": "parameter_annotation_name", "type": "symbol", "size": "1"},
+    {"name": "parameter_linknames", "type": "int", "size": "1"},
+    {"name": "parameter_order", "type": "int", "size": "1"},
+    {"name": "parameter_speedlim", "type": "float", "size": "1"},
+    {"name": "parameter_defer", "type": "int", "size": "1"},
+    {"name": "parameter_button_mode", "type": "symbol", "size": "1"}
+  ],
+  "in/out": {},
+  "doc": {
+    "digest": "Switch between off and on (0/1)",
+    "description": "live.toggle sends a 0 as output when it is turned off and a 1 as output when it is turned on (when giving input, a non-zero number will turn it on, a 0 will turn it off, and a bang will alternate the state of the toggle).",
+    "inlets": [
+      {"id": "0", "type": "INLET_TYPE", "digest": "int Sets Toggle, bang Reverses It"}
+    ],
+    "outlets": [
+      {"id": "0", "type": "int", "digest": "Output 1 or 0 When Toggle Is Set"}
+    ],
+    "methods": [
+      {"name": "bang", "digest": "Alternate toggle state"},
+      {"name": "int", "digest": "Switch toggle and pass through number", "args": [{"name": "input", "optional": "0", "type": "int"}]},
+      {"name": "float", "digest": "Converted to int. See int listing.", "args": [{"name": "input", "optional": "0", "type": "float"}]},
+      {"name": "assign", "digest": "Display and output a value", "args": [{"name": "assign-input", "optional": "0", "type": "float"}]},
+      {"name": "init", "digest": "Restore and output the initial value"},
+      {"name": "(mouse)", "digest": "Switch toggle state"},
+      {"name": "outputvalue", "digest": "Send the current value out the outlet"},
+      {"name": "set", "digest": "Switch toggle state without output", "args": [{"name": "set-input", "optional": "0", "type": "int"}]}
+    ]
+  }
+}

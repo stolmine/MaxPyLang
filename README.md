@@ -38,6 +38,36 @@ patch.connect([osc.outs[0], dac.ins[0]])
 patch.save("hello_world.maxpat")
 ```
 
+## Max for Live Devices
+
+Patches can be saved as Ableton Live devices (`.amxd`). The `live.*` objects
+(`live.dial`, `live.text`, `live.gain~`, `live.object`, `live.thisdevice`, ...) are bundled,
+and Live parameter properties are plain keyword attributes:
+
+```python
+import maxpylang as mp
+
+patch = mp.MaxPatch()
+plugin = patch.place("plugin~")[0]
+filt = patch.place("lores~ 1000 0.3")[0]
+plugout = patch.place("plugout~")[0]
+
+cutoff = patch.place(mp.MaxObject(
+    "live.dial", parameter_longname="Cutoff",
+    parameter_mmin=20., parameter_mmax=20000., parameter_initial=1000.,
+    parameter_unitstyle="hertz", parameter_exponent=3.))[0]
+cutoff.present(8, 8)                      # show it in the device view
+
+patch.connect([plugin.outs[0], filt.ins[0]], [cutoff.outs[0], filt.ins[1]],
+              [filt.outs[0], plugout.ins[0]], [filt.outs[0], plugout.ins[1]])
+patch.set_device(openinpresentation=1)    # Live shows the presentation view
+patch.save("filter.amxd", device_type="audio_effect")
+```
+
+See [examples/m4l_filter_device](./examples/m4l_filter_device) for a complete stereo device.
+The `live.*` object database is generated offline from an Ableton Live 12 install with
+`python -m maxpylang.import_m4l`.
+
 ## Citation
 
 MaxPy was published as a [demo paper](examples/NIME2023/MaxPy-NIME-2023-Paper.pdf) for NIME 2023.
