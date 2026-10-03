@@ -68,6 +68,41 @@ See [examples/m4l_filter_device](./examples/m4l_filter_device) for a complete st
 The `live.*` object database is generated offline from an Ableton Live 12 install with
 `python -m maxpylang.import_m4l`.
 
+## Reading existing devices
+
+MaxPyLang can open and explain existing Max for Live devices, including frozen
+devices (dependencies bundled inside the `.amxd`) and older devices without a
+`meta` chunk. Reading never modifies the device. Ableton-encrypted devices
+(the built-in MIDI Tools, for example) are detected and reported as
+"encrypted device — cannot be read".
+
+```bash
+maxpylang survey "~/Music/M4L devices"      # one line per device: type, #params, frozen/encrypted, size
+maxpylang describe "Device.amxd"            # Markdown: parameters, device view, signal flow, structure, code
+maxpylang describe "Device.amxd" --json     # everything, including the full object graph
+maxpylang describe "Device.amxd" --depth 5 --full-code
+maxpylang params "Device.amxd"              # every Live parameter, with what it controls
+maxpylang extract "Device.amxd" out/        # main patch as out/Device.maxpat + embedded files
+```
+
+`describe` lists each Live parameter (name, type, range, unit, exponent, enum
+items, modulation mode, whether it is in the device view) and traces a few hops
+downstream through cords, subpatchers and send/receive pairs to show which DSP
+objects it controls. It also shows the audio path from `plugin~` to `plugout~`,
+the MIDI path, the subpatcher/abstraction hierarchy, the device view
+top-to-bottom, patcher comments and embedded js/gen code.
+
+The same tools from Python:
+
+```python
+d = mp.describe("Device.amxd")
+print(d.to_markdown())
+data = d.to_json()
+mp.extract("Device.amxd", "out")
+rows = list(mp.survey("M4L devices"))
+patch = mp.MaxPatch(load_file="Device.amxd")   # frozen devices load too
+```
+
 ## Citation
 
 MaxPy was published as a [demo paper](examples/NIME2023/MaxPy-NIME-2023-Paper.pdf) for NIME 2023.

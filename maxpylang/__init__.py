@@ -172,6 +172,19 @@ Layout rules:
 - loadbang/defaults to the right of main flow.
 - Group ``connect()`` calls by section, not scattered throughout.
 
+Reading Existing Devices
+------------------------
+
+Read-only inspection of .amxd devices (plain, frozen, or older meta-less)::
+
+    d = mp.describe("Device.amxd")       # DeviceDescription
+    print(d.to_markdown())               # params, device view, signal flow, code
+    d.to_json()                          # full detail
+    mp.extract("Device.amxd", "outdir")  # main patch as .maxpat + embedded files
+    rows = list(mp.survey("folder"))     # one summary dict per device
+
+Encrypted devices raise ``maxpylang.exceptions.EncryptedDeviceError``.
+
 Regenerate Stubs
 ----------------
 
@@ -188,8 +201,9 @@ from .maxobject import MaxObject
 from .maxpatch import MaxPatch
 from .importobjs import import_objs
 from .xlet import Inlet, Outlet
-from .amxd import save_amxd, load_amxd, DEVICE_TYPES
+from .amxd import save_amxd, load_amxd, read_amxd, DEVICE_TYPES
 from . import m4l
+from .devinspect import describe, extract, survey
 
 try:
     from . import objects

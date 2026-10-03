@@ -356,6 +356,27 @@ for key, obj in patch.objs.items():
 patch.save("modified.amxd", device_type="instrument")
 ```
 
+### Reading and Learning From Existing Devices
+
+To understand an existing device (or a folder of them), use the read-only CLI
+instead of opening the `.amxd` bytes. It never modifies the device.
+
+1. `maxpylang survey <folder>`: one line per device (type, #params,
+   frozen/plain/encrypted, size). Use it to pick devices.
+2. `maxpylang describe <device.amxd>`: always run this first on a device. It prints
+   compact Markdown: parameters with ranges and what each one feeds, the device view
+   top-to-bottom, the audio (`plugin~` -> `plugout~`) and MIDI paths, the subpatcher
+   hierarchy, comments, and the first lines of js/gen code.
+   Options: `--depth N` (hierarchy levels), `--full-code`, `--json` (full detail and
+   object graph; large, so grep it rather than reading it whole).
+3. `maxpylang params <device.amxd>`: every parameter, one per line.
+4. `maxpylang extract <device.amxd> <outdir>`: for deeper dives. Writes the main patch
+   as `<outdir>/<name>.maxpat` plus the embedded abstractions, js, gen and media files.
+   Open or `mp.MaxPatch(load_file=...)` those copies, never the original.
+
+"encrypted device — cannot be read" means Ableton encrypted it; skip it.
+From Python: `mp.describe(path).to_markdown()`, `mp.extract(path, outdir)`, `mp.survey(folder)`.
+
 ### Standalone amxd Functions
 
 For advanced use (custom JSON manipulation before saving):
