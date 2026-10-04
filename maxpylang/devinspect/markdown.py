@@ -172,6 +172,8 @@ def _code(d, full, out):
         uses = f", used {len(c['used_in'])}x" if len(c["used_in"]) > 1 else ""
         out.append(f"### {title} ({c['origin']}, {c['lines']} lines{uses})")
         out.append(f"at {c['used_in'][0]}")
+        if c.get("params"):
+            out.append(f"Params: {', '.join(c['params'])}")
         if not c["text"]:
             continue
         lines = c["text"].split("\n")

@@ -172,6 +172,21 @@ Layout rules:
 - loadbang/defaults to the right of main flow.
 - Group ``connect()`` calls by section, not scattered throughout.
 
+gen~ Codeboxes
+--------------
+
+A gen~ box whose DSP is GenExpr text (embedded patcher, no .gendsp file)::
+
+    gen = patch.place(mp.gen_codebox("out1 = in1 * 0.5;"))[0]   # in/out counts from the code
+    mp.genexpr_params(code)                                    # Param names declared in code
+
+v8 Codeboxes
+------------
+
+A v8.codebox whose JavaScript is embedded in the box (no .js file)::
+
+    js = patch.place(mp.v8_codebox("outlets = 2;\nfunction bang() { outlet(1, 1); }"))[0]
+
 Reading Existing Devices
 ------------------------
 
@@ -203,6 +218,8 @@ from .importobjs import import_objs
 from .xlet import Inlet, Outlet
 from .amxd import save_amxd, load_amxd, read_amxd, DEVICE_TYPES
 from . import m4l
+from .gen import gen_codebox, genexpr_params
+from .v8 import v8_codebox, js_io
 from .devinspect import describe, extract, survey
 
 try:

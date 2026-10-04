@@ -68,6 +68,45 @@ See [examples/m4l_filter_device](./examples/m4l_filter_device) for a complete st
 The `live.*` object database is generated offline from an Ableton Live 12 install with
 `python -m maxpylang.import_m4l`.
 
+## gen~ codeboxes
+
+`mp.gen_codebox(code)` makes a `gen~` box whose DSP is GenExpr text. The code lives in
+the box's embedded patcher (`in N` -> codebox -> `out N`, no `.gendsp` file), so it travels
+inside a `.maxpat` or a non-frozen `.amxd`, and Max compiles it when the patch loads.
+
+```python
+code = """
+Param gain(0.5, min=0, max=1);
+out1 = in1 * gain;
+out2 = in2 * gain;
+"""
+gen = patch.place(mp.gen_codebox(code))[0]          # 2 in / 2 out, read from in1/in2, out1/out2
+gain_msg = patch.place("prepend gain")[0]           # set a Param with "<name> <value>"
+patch.connect([plugin.outs[0], gen.ins[0]], [plugin.outs[1], gen.ins[1]],
+              [gain_msg.outs[0], gen.ins[0]])
+```
+
+- `inlets=` / `outlets=` override the counts (never fewer than the code uses).
+- `params={"gain": {"default": 0.5, "min": 0, "max": 1}}` prepends `Param` declarations.
+- `kind="gen"` makes an event-rate `gen` box; extra keywords become box keys (`varname=...`).
+- Param names that shadow gen operators (`mix`, `wrap`, `delay`, ...) raise `ValueError`.
+- `mp.genexpr_params(code)` lists the Param names; `describe` shows them with the code.
+
+## v8 codeboxes
+
+`mp.v8_codebox(code)` makes a `v8.codebox` box (modern JavaScript engine, Max 9 / Live 12)
+whose source is stored in the box itself, so it needs no `.js` file next to the device.
+The inlet/outlet counts are read from the code's `inlets = N;` / `outlets = N;` lines.
+
+```python
+code = """
+inlets = 1;
+outlets = 2;
+function bang() { outlet(1, new LiveAPI("live_set").get("tempo")); }
+"""
+js = patch.place(mp.v8_codebox(code, size=(500, 300)))[0]   # 1 in / 2 out
+```
+
 ## Reading existing devices
 
 MaxPyLang can open and explain existing Max for Live devices, including frozen

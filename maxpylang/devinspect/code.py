@@ -10,6 +10,7 @@ codebox, v8.codebox).
 
 import os
 
+from ..gen import genexpr_params
 from .tree import CODE_CLASSES, box_args, box_word
 
 CODE_EXTS = ("", ".js", ".mjs", ".ts")
@@ -41,7 +42,10 @@ def _read_source(name, device, folder):
 
 
 def collect_code(nodes, device):
-    """Return [{object, file, origin, text, lines, used_in: [path#id, ...]}]."""
+    """Return [{object, file, origin, text, lines, used_in: [path#id, ...]}].
+
+    gen codebox entries also carry params: the GenExpr Param names.
+    """
     folder = os.path.dirname(os.path.abspath(device.path)) if device.path else ""
     entries = {}
 
@@ -58,8 +62,10 @@ def collect_code(nodes, device):
             code = box.get("code")
             if isinstance(code, str) and code.strip():
                 kind = "gen codebox" if node.is_gen else word
-                add(("code", kind, code.strip()),
-                    {"object": kind, "file": "", "origin": "box", "text": code}, where)
+                entry = {"object": kind, "file": "", "origin": "box", "text": code}
+                if node.is_gen:
+                    entry["params"] = genexpr_params(code)
+                add(("code", kind, code.strip()), entry, where)
                 continue
             if word not in CODE_CLASSES:
                 continue

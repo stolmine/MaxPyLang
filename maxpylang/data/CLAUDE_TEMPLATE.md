@@ -347,6 +347,35 @@ patch.set_device(openinpresentation=1, devicewidth=120.)
 - `devicewidth=0.` lets Live fit the width to the presentation contents.
 - `set_device()` keys: see `mp.m4l.DEVICE_KEYS`. `project.amxdtype` is filled in on save.
 
+### gen~ Codeboxes
+
+Write DSP as GenExpr and embed it in a `gen~` box (no `.gendsp` file needed):
+
+```python
+code = "Param gain(0.5, min=0, max=1);\nout1 = in1 * gain;\nout2 = in2 * gain;"
+gen = patch.place(mp.gen_codebox(code))[0]     # inlets/outlets from in1..inN / out1..outN
+msg = patch.place("prepend gain")[0]           # Params are set by "<name> <value>" messages
+patch.connect([msg.outs[0], gen.ins[0]])
+```
+
+- `inlets=`/`outlets=` override the counts; `params={name: default}` prepends Param lines.
+- Never name a Param after a gen operator (`mix`, `wrap`, `clip`, `delay`, `noise`, ...): it raises.
+- Max compiles the code when the patch loads; MaxPyLang does not check GenExpr syntax.
+- `mp.genexpr_params(code)` lists Param names.
+
+### v8 Codeboxes
+
+Embed modern JavaScript (v8 engine: LiveAPI, Task, File, Dict) in a `v8.codebox` box:
+
+```python
+code = "inlets = 1;\noutlets = 2;\nfunction bang() { outlet(0, 'done'); }"
+js = patch.place(mp.v8_codebox(code, size=(500, 300)))[0]   # xlets from inlets/outlets lines
+```
+
+- Declare `inlets = N;` / `outlets = N;` in the code; passing different counts raises.
+- Create `LiveAPI` objects in response to messages (after `live.thisdevice` bangs), not at load.
+- Max compiles the code when the patch loads; MaxPyLang does not check JavaScript syntax.
+
 ### Loading Existing .amxd Files
 
 ```python
